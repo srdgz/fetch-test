@@ -1,9 +1,9 @@
-import {createTitle} from "./components/title.js";
+import { createTitle } from "./components/title.js";
 import { createList } from "./components/list.js";
 
 const app = (root) => {
 
-const endPoint = 'https://www.swapi.tech/api/films/3';
+const endPoint = 'https://www.swapi.tech/api/films/5';
 
 fetch(endPoint)
 .then(response => {
@@ -17,13 +17,13 @@ fetch(endPoint)
     const h1 = createTitle(title);
     root.append(h1);
 
-    const character = data.result.properties.characters;
-    const list = createList(character);
+    const characters = data.result.properties.characters;
+    const list = createList(characters);
     root.append(list);
 })
 .catch(error => {
     console.log(error)
 });
+}
 
-};
-export default app
+export default app;

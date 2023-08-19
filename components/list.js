@@ -1,11 +1,9 @@
-export const createList = (character) =>{
-
-    const listElement = document.createElement("li");
-    listElement.className = "list";
-
-    character.array.forEach(elem => {
-        document.createElement("li");
+export const createList = (characters) => {
+    let ulElement = document.createElement('ul');
+    characters.forEach(elem => {
+        let liElement = document.createElement("li");
+        liElement.textContent = elem;
+        ulElement.appendChild(liElement);
     });
-
-    return listElement;
+    return ulElement;
 }
